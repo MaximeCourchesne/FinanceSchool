@@ -1,0 +1,61 @@
+class Comment
+{
+  contentPath;
+date;
+* parentComment -<@> 0..1 Comment childComment;
+    * -<@> 0..1 Post;
+  * commsent -- 1 User commentator;
+
+  * likedComent -- * User userThatLiked;
+}
+
+class Post
+{
+  title;
+contentPath;
+date;
+* -- 0..1 Section;
+  * -- 1 User;
+}
+
+class User
+{
+  name;
+  profilePicturePath;
+  password;
+}
+
+class Section
+{
+  name;
+}
+
+class Contributor
+{
+    isA User;
+biography;
+  email;
+}
+
+class Reader
+{
+  isA User;
+}
+
+class Donation
+{
+  int amount;
+  date;
+message;
+* -- 1
+    User;
+  1 <@>- 0..1 Transaction;
+}
+
+class Transaction
+{
+}
+
+class FinancialSchool
+{
+}
